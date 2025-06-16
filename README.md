@@ -1,6 +1,6 @@
 # Validator API
 
-A simple Java API for validating emails and dates.
+A Java API for validating emails, dates, passwords, and mobile numbers.
 
 ## Project Structure
 
@@ -11,45 +11,55 @@ validator-api/
 │   ├── main/java/com/validator/api/
 │   │   ├── App.java
 │   │   ├── handler/ValidatorHandler.java
-│   │   └── model/
-│   │       ├── Request.java
-│   │       └── Response.java
+│   │   ├── model/
+│   │   │   ├── Request.java
+│   │   │   └── Response.java
+│   │   └── validations/
+│   │       ├── EmailValidator.java
+│   │       ├── DateValidator.java
+│   │       ├── PasswordValidator.java
+│   │       └── MobileValidator.java
 │   └── test/java/com/validator/api/AppTest.java
 └── target/
 ```
+
+## Features
+- **Email Validation**: Checks if an email address is valid.
+- **Date Validation**: Validates date strings in `yyyy-MM-dd` format.
+- **Password Validation**: Ensures passwords are at least 8 characters, with upper/lowercase, digit, and special character.
+- **Mobile Validation**: Validates 10-digit mobile numbers not starting with 0.
 
 ## Build & Run
 
 This project uses Maven for build automation.
 
 ### Build
-
-```
+```sh
 mvn clean package
 ```
 
 ### Run
-
-```
+```sh
 mvn exec:java -Dexec.mainClass="com.validator.api.App"
 ```
 
 ### Test
-
-```
+```sh
 mvn test
 ```
 
-## Description
-
-- `App.java`: Main entry point of the application.
-- `handler/ValidatorHandler.java`: Handles validation logic.
-- `model/Request.java` & `model/Response.java`: Data models for requests and responses.
+## Main Classes
+- `App.java`: Example usage and entry point.
+- `handler/ValidatorHandler.java`: Handles validation requests.
+- `model/Request.java` & `model/Response.java`: Data models.
+- `validations/EmailValidator.java`: Email validation logic.
+- `validations/DateValidator.java`: Date validation logic.
+- `validations/PasswordValidator.java`: Password validation logic.
+- `validations/MobileValidator.java`: Mobile number validation logic.
 
 ## Requirements
 - Java 11 or higher
 - Maven
 
 ## License
-
-MIT License
+jrubenrm License
