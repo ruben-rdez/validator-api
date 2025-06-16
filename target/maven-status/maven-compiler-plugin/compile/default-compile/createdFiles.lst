@@ -1,4 +1,0 @@
-com\validator\api\App.class
-com\validator\api\handler\ValidatorHandler.class
-com\validator\api\model\Response.class
-com\validator\api\model\Request.class
