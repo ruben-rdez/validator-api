@@ -1,0 +1,14 @@
+*.class
+
+/target/
+/build/
+
+/.idea/
+/.vscode/
+/*.iml
+/.classpath
+/.project
+/.settings/
+
+*.log
+*.tmp
