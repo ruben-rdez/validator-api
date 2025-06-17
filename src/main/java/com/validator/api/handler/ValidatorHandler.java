@@ -7,10 +7,10 @@ import java.time.format.DateTimeParseException;
 
 import com.validator.api.model.Request;
 import com.validator.api.model.Response;
-import com.validator.api.validations.PasswordValidator;
-import com.validator.api.validations.MobileValidator;
-import com.validator.api.validations.EmailValidator;
-import com.validator.api.validations.DateValidator;
+import com.validator.api.validator.DateValidator;
+import com.validator.api.validator.EmailValidator;
+import com.validator.api.validator.PhoneValidator;
+import com.validator.api.validator.PasswordValidator;
 
 public class ValidatorHandler implements RequestHandler<Request, Response>{
 
@@ -27,9 +27,9 @@ public class ValidatorHandler implements RequestHandler<Request, Response>{
                 case "password":
                     boolean passwordValid = PasswordValidator.isValidPassword(request.getValue());
                     return new Response(passwordValid, passwordValid ? "Valid Password" : "Invalid Password", passwordValid);
-                case "mobile":
-                    boolean mobileValid = MobileValidator.isValidMobile(request.getValue());
-                    return new Response(mobileValid, mobileValid ? "Valid Mobile Number" : "Invalid Mobile Number", mobileValid);
+                case "phone":
+                    boolean phoneValid = PhoneValidator.isValidPhone(request.getValue());
+                    return new Response(phoneValid, phoneValid ? "Valid Phone Number" : "Invalid Phone Number", phoneValid);
                 default:
                     return new Response(false, "Unsupported Type", null);
             }

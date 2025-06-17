@@ -19,7 +19,7 @@ public class App {
         System.out.println("Valid Date Validation Response: " 
             + handler.handleRequest(validDate, null).getMessage());
 
-        Request invalidDate = new Request("date", "16-06-2025");
+        Request invalidDate = new Request("date", "2023-02-30");
         System.out.println("Invalid Date Validation Response: " 
             + handler.handleRequest(invalidDate, null).getMessage());
 
