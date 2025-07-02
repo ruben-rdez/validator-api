@@ -58,7 +58,7 @@ mvn test
 - `validations/MobileValidator.java`: Mobile number validation logic.
 
 ## Requirements
-- Java 11 or higher
+- Java 21
 - Maven
 
 ## License
