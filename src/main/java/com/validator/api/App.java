@@ -42,5 +42,13 @@ public class App {
         Request invalidMobile = new Request("phone", "12345");
         logger.info("Invalid Mobile Validation Response: {}", 
             handler.handleRequest(invalidMobile, null).getMessage());
+
+        Request validUserName = new Request("username", "user123");
+        logger.info("Valid Username Validation Response: {}", 
+            handler.handleRequest(validUserName, null).getMessage());
+
+        Request invalidUserName = new Request("username", "u");
+        logger.info("Invalid Username Validation Response: {}", 
+            handler.handleRequest(invalidUserName, null).getMessage());
     }
 }

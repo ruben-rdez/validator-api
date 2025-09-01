@@ -1,6 +1,6 @@
 # Validator API
 
-A Java API for validating emails, dates, passwords, and mobile numbers.
+A Java API for validating emails, dates, passwords, mobile numbers, and usernames.
 
 ## Project Structure
 
@@ -9,8 +9,9 @@ validator-api/
 ├── pom.xml
 ├── src/
 │   ├── main/java/com/validator/api/
+│   │   ├── handler/
+│   │   │   └── ValidatorHandler.java
 │   │   ├── App.java
-│   │   ├── handler/ValidatorHandler.java
 │   │   ├── model/
 │   │   │   ├── Request.java
 │   │   │   └── Response.java
@@ -18,7 +19,8 @@ validator-api/
 │   │       ├── EmailValidator.java
 │   │       ├── DateValidator.java
 │   │       ├── PasswordValidator.java
-│   │       └── MobileValidator.java
+│   │       ├── MobileValidator.java
+│   │       └── UserNameValidator.java
 │   └── test/java/com/validator/api/AppTest.java
 └── target/
 ```
@@ -28,6 +30,7 @@ validator-api/
 - **Date Validation**: Validates date strings in `yyyy-MM-dd` format.
 - **Password Validation**: Ensures passwords are at least 8 characters, with upper/lowercase, digit, and special character.
 - **Mobile Validation**: Validates 10-digit mobile numbers not starting with 0.
+- **Username Validation**: Checks if a username meets required criteria (e.g., allowed characters, length).
 
 ## Build & Run
 
@@ -56,9 +59,10 @@ mvn test
 - `validations/DateValidator.java`: Date validation logic.
 - `validations/PasswordValidator.java`: Password validation logic.
 - `validations/MobileValidator.java`: Mobile number validation logic.
+- `validations/UserNameValidator.java`: Username validation logic.
 
 ## Requirements
-- Java 21
+- Java 21 or higher
 - Maven
 
 ## License

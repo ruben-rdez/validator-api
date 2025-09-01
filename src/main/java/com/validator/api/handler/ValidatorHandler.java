@@ -10,6 +10,7 @@ import com.validator.api.model.Response;
 import com.validator.api.validator.DateValidator;
 import com.validator.api.validator.EmailValidator;
 import com.validator.api.validator.PhoneValidator;
+import com.validator.api.validator.UserNameValidator;
 import com.validator.api.validator.PasswordValidator;
 
 public class ValidatorHandler implements RequestHandler<Request, Response>{
@@ -30,6 +31,9 @@ public class ValidatorHandler implements RequestHandler<Request, Response>{
                 case "phone":
                     boolean phoneValid = PhoneValidator.isValidPhone(request.getValue());
                     return new Response(phoneValid, phoneValid ? "Valid Phone Number" : "Invalid Phone Number", phoneValid);
+                case "username":
+                    boolean usernameValid = UserNameValidator.isValidUserName(request.getValue());
+                    return new Response(usernameValid, usernameValid ? "Valid Username" : "Invalid Username", usernameValid);
                 default:
                     return new Response(false, "Unsupported Type", null);
             }
