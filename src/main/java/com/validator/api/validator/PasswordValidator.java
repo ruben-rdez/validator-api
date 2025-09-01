@@ -2,6 +2,11 @@ package com.validator.api.validator;
 
 public class PasswordValidator {
 
+    private PasswordValidator() {
+        // Private constructor to prevent instantiation
+        throw new UnsupportedOperationException("PasswordValidator is a utility class and cannot be instantiated");
+    }
+
     public static boolean isValidPassword(String password){
         if (password == null || password.length() < 8) {
             return false; 
@@ -24,7 +29,11 @@ public class PasswordValidator {
             }
         }
 
-        return hasUpperCase && hasLowerCase && hasDigit && hasSpecialChar;
+        if(hasUpperCase && hasLowerCase && hasDigit && hasSpecialChar){
+            return true;
+        }
+
+        return false;
     }
 
 }

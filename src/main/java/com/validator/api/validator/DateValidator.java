@@ -7,6 +7,11 @@ import java.time.format.ResolverStyle;
 
 public class DateValidator {
 
+    private DateValidator() {
+        // Private constructor to prevent instantiation
+        throw new UnsupportedOperationException("DateValidator is a utility class and cannot be instantiated");
+    }
+
     private static final DateTimeFormatter DATE_FORMATTER = 
         DateTimeFormatter.ofPattern("uuuu-MM-dd").withResolverStyle(ResolverStyle.STRICT);
 
